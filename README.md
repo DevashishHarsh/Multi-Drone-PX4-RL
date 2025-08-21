@@ -11,6 +11,7 @@ A toolkit to spawn multiple PX4 simulated drones, design formations with a simpl
 
 ### Reinforcement Learning Integration
 - Deploy trained models into Gazebo/ROS 2 for realistic testing.
+
 ![Reinforce](assets/reinforcement.gif)
 
 ### ROS 2 + PX4 Integration
