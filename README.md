@@ -95,19 +95,19 @@ This command has three args
 ### Manual Mode 
 The manual mode, as the name suggests lets you control the leader drone while the follower drones keep an offset with you which lets you control the whole formation indirectly. You can enter the manual mode with "manual" command.
 #### Controls in Manual Mode
-W,A,S,D - Movement control
-I,K - Altitude control
-J, L - Yaw control
-N - Next formation in the list
-Z - Exit Manual mode to Main Menu
+- W,A,S,D - Movement control
+- I,K - Altitude control
+- J, L - Yaw control
+- N - Next formation in the list
+- Z - Exit Manual mode to Main Menu
 
 ### Auto Mode
 The auto mode uses the SAC Model to control the drone based on P2P mode ( Point to Point ). It calculates the velocity to reach the given goal point and also utilizes lidar points to avoid the obstacles in the path, thus successfully showcasing path planning and obstacle avoidance. You can enter the auto mode with "auto" command.
 > The model has been trained with another repository [DroneRL](https://github.com/DevashishHarsh/DroneRL). You can check it out to train your own model for the drone control and to understand the model's working.
 #### Controls in Auto Mode
-move X Y : Moves to (X,Y) [(Y, X) in Gazebo Axes] using the SAC Model and predicting the velocity commands with the provided obs. 
-n - Next formation in the list
-z - Exit Auto mode to Main Menu
+- move X Y : Moves to (X,Y) [(Y, X) in Gazebo Axes] using the SAC Model and predicting the velocity commands with the provided obs. 
+- n - Next formation in the list
+- z - Exit Auto mode to Main Menu
 
 ## Side Note
 I have just worked on this so I will be adding more scripts to this repository and fixing the bugs to make it robust. The model, as of now is 86% Accurate ( Tested over 100 episodes ). 
