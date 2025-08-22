@@ -321,7 +321,7 @@ def multi_drone_move(targets: list, model_dir: str = None, device: str = "cpu"):
         spin_thread = threading.Thread(target=spin_node, daemon=True)
         spin_thread.start()
         time.sleep(2.0)
-        takeoff_position = [0.0, 0.0, -10.0 if is_leader else -5.0]
+        takeoff_position = [0.0, 0.0, -6.0 if is_leader else -5.0]
         node.current_setpoint = takeoff_position
         print(f"Drone {drone_id}{' (Leader)' if is_leader else ''} taking off to {takeoff_position}")
         for _ in range(20):
@@ -594,13 +594,13 @@ def multi_drone_move(targets: list, model_dir: str = None, device: str = "cpu"):
             vx = 0.0
             vy = 0.0
         try:
-            px = float(drone_nodes[leader_id].vehicle_local_position.x)
+            px = float(drone_nodes[leader_id].vehicle_local_position.x) 
             py = float(drone_nodes[leader_id].vehicle_local_position.y)
         except Exception:
             px, py = 0.0, 0.0
         with state_lock:
             ld = drone_nodes[leader_id].lidar_data.copy() if isinstance(drone_nodes[leader_id].lidar_data, np.ndarray) else None
-            gp = None if goal_pos is None else (goal_pos[0]-1, goal_pos[1])
+            gp = None if goal_pos is None else (goal_pos[0], goal_pos[1])
             pa = prev_action.copy()
         if ld is None:
             lidar_vec = np.full(LIDAR_NUM_RAYS, LIDAR_MAX_RANGE, dtype=np.float32)
@@ -836,7 +836,7 @@ def multi_drone_move(targets: list, model_dir: str = None, device: str = "cpu"):
                 except ValueError:
                     print("move: X and Y must be numbers.")
                     continue
-                goal_pos = (gx, gy)
+                goal_pos = (gx - 1, gy)
                 at_goal = False
                 print(f"[AUTO] new goal set to ({gx}, {gy})")
             elif cmd == "lockyaw":
