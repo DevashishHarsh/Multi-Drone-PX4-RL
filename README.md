@@ -90,7 +90,7 @@ source /opt/ros/jazzy/setup.bash
 > Make sure you have installed the repository [px4_ros2_ws](https://github.com/DevashishHarsh/px4_ros2_ws) as it contains the required "px4_msgs" and "px4_ros_com" repos as well.
 > Add these to your .bashrc file so that you don't need to source them everytime you open a terminal
 
-8. Run rundrone.py in a new terminal that controls the spawned drones in gazebo for formation in manual and auto modes.
+7. Run rundrone.py in a new terminal that controls the spawned drones in gazebo for formation in manual and auto modes.
 ```
 cd Multi-Drone-PX4-RL
 python3 rundrone.py
