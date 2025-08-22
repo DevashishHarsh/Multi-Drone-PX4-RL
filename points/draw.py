@@ -130,14 +130,7 @@ def main():
     # Ensure JSON file sits next to this script regardless of working directory
     filename = Path(__file__).parent / "drone_points.json"
 
-    if filename.exists():
-        with filename.open("r") as f:
-            try:
-                data = json.load(f)
-            except json.JSONDecodeError:
-                data = {}
-    else:
-        data = {}
+    data = {}
 
     index = 0
     try:
@@ -148,17 +141,6 @@ def main():
 
     offset = 2 # int(input("Enter the offset in X axis : "))
     scale = 40 # int(input("Enter the scale of the drawing for the drone points (20 - 50) : "))
-
-    # start fresh for this session (keeps file-based history intact)
-    # data = {}
-
-    # if you want index to continue from existing file keys, compute max key:
-    if data:
-        try:
-            existing_indices = [int(k) for k in data.keys()]
-            index = max(existing_indices) + 1
-        except Exception:
-            index = len(data)
 
     while True:
         print("\nDraw shape on canvas. Press 'n' for next or Enter to finish and view all drawings.")
