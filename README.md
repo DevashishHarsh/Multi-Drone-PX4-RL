@@ -67,7 +67,7 @@ python3 draw.py
 4. Run launch.py that spawns the drones ( along with the leader that has the lidar sensor ) according to the number of drones and number of formations you chose in Step 3.
 ```
 cd Multi-Drone-PX4-RL
-python3 launcy.py
+python3 launch.py
 ```
 This command has two args 
 - -p --points : Define the path to drone_points.json file or directory containing it.
