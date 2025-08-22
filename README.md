@@ -41,6 +41,7 @@ cd
 git clone https://github.com/DevashishHarsh/Multi-Drone-PX4-RL.git
 ```
 2. Create a virtual environment and install all the necessary modules.
+Make sure you activate the virtual environment in every new terminal or just add it to your .bashrc
 ```
 python3 -m venv venv
 source venv/bin/activate #Activates the virtual environment
@@ -48,6 +49,7 @@ cd Multi-Drone-PX4-RL
 pip install -r requirements.txt
 ```
 > I have also included a [setup.sh](setup.sh) file which installs everything ( PX4-Autopilot, QGroundControl, ROS2 ) that is required but I would suggest you install everything manually.
+
 ```
 chmod +x setup.sh
 ./setup.sh
@@ -86,6 +88,8 @@ This command has three args
 cd px4_ros2_ws
 source install/setup.bash
 source /opt/ros/jazzy/setup.bash
+cd
+source venv/bin/activate
 ```
 > Make sure you have installed the repository [px4_ros2_ws](https://github.com/DevashishHarsh/px4_ros2_ws) as it contains the required "px4_msgs" and "px4_ros_com" repos as well.
 > Add these to your .bashrc file so that you don't need to source them everytime you open a terminal
