@@ -81,7 +81,16 @@ This command has three args
 - -v --visual : Whether to open rviz (1) or not (0). Default: 0.
 > I have included an extra script [leader_rl.py](checks/leader_rl.py) in which only one leader drone is spawned to test lidar and other functions.
 
-6. Run rundrone.py in a new terminal that controls the spawned drones in gazebo for formation in manual and auto modes.
+6. Source all the necessary files if you haven't done them already.
+```
+cd px4_ros2_ws
+source install/setup.bash
+source /opt/ros/jazzy/setup.bash
+```
+> Make sure you have installed the repository [px4_ros2_ws](https://github.com/DevashishHarsh/px4_ros2_ws) as it contains the required "px4_msgs" and "px4_ros_com" repos as well.
+> Add these to your .bashrc file so that you don't need to source them everytime you open a terminal
+
+8. Run rundrone.py in a new terminal that controls the spawned drones in gazebo for formation in manual and auto modes.
 ```
 cd Multi-Drone-PX4-RL
 python3 rundrone.py
