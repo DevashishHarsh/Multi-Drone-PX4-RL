@@ -1,7 +1,7 @@
 # Multi-Drone-PX4-RL
 A toolkit to spawn multiple PX4 simulated drones, design formations with a simple drawing canvas, and control the swarm either manually (keyboard) or automatically with a trained RL leader.
 
-## Tested this on WSL2 with Ubuntu 24.04, ROS2 Jazzy and Gazebo Harmonic v8.9.0
+#### Tested this on WSL2 with Ubuntu 24.04, ROS2 Jazzy and Gazebo Harmonic v8.9.0
 
 ## Features
 
