@@ -1,6 +1,8 @@
 # Multi-Drone-PX4-RL
 A toolkit to spawn multiple PX4 simulated drones, design formations with a simple drawing canvas, and control the swarm either manually (keyboard) or automatically with a trained RL leader.
 
+## Tested this on WSL2 with Ubuntu 24.04, ROS2 Jazzy and Gazebo Harmonic v8.9.0
+
 ## Features
 
 ### Formation Flight 
@@ -123,7 +125,17 @@ The auto mode uses the SAC Model to control the drone based on P2P mode ( Point 
 - z - Exit Auto mode to Main Menu
 
 ## Side Note
-I have just worked on this so I will be adding more scripts to this repository and fixing the bugs to make it robust. The model, as of now is 86% Accurate ( Tested over 100 episodes ). 
+- I have just worked on this so I will be adding more scripts to this repository and fixing the bugs to make it robust. The model, as of now is 86% Accurate ( Tested over 100 episodes ).
+- You can add the px4_ros2_ws source file in your .bashrc as an alias ( I have been using it this way ) with the following command.
+```
+echo "alias <your_alias>='source ~/px4_ros2_ws/install/setup.bash'" >> ~/.bashrc
+```
+> Creating aliases for commands makes the workflow quite smooth and easy to understand.
+- Dronekill is a command that kills all the instances of PX4 Drones, QGroundControl, MicroXRCE-DDS Agent and Visualizer. It can be used to shutdown all the nodes if any problem exists. You can run this command in any directory.
+```
+echo "alias dronekill='tmux kill-session -t px4_multi && pkill -f gz'" >> ~/.bashrc
+```
+Make sure to source your .bashrc file after creating aliases (or) open up a new terminal.
 
 ## License
 This repository is provided under the MIT License.
